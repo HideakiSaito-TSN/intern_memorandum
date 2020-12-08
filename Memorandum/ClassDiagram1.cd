@@ -3,7 +3,7 @@
   <Class Name="Memorandum.Models.Account">
     <Position X="1" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAQIQAAIAA=</HashCode>
+      <HashCode>AAACAAQAAAAAAAAAAAAAAQQAAAAAAAAAAAAAIQAAIAA=</HashCode>
       <FileName>Models\Account.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -15,7 +15,7 @@
   <Class Name="Memorandum.Models.Goal">
     <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAACACAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Goal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -35,6 +35,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Models\Reaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memorandum.Controllers.HomeController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Yu Gothic UI" Size="9" />
