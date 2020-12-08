@@ -14,7 +14,7 @@ namespace Memorandum.Models
     public string Name { get; set; }
 
     [DisplayName("ログイン状況")]
-    public bool Login { get; set; }
+    public bool Islogin { get; set; }
 
     [DisplayName("管理者")]
     public bool Admin { get; set; }

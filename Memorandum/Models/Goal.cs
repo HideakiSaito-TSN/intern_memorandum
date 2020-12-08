@@ -11,12 +11,12 @@ namespace Memorandum.Models
     public int Id { get; set; }
 
     [DisplayName("期間")]
-    public DateTime Period { get; set; }
+    public bool Isdoing { get; set; }
 
     [DisplayName("内容")]
     public string Content { get; set; }
 
     [DisplayName("チェック")]
-    public bool Check { get; set; }
+    public bool Isdone { get; set; }
   }
 }
