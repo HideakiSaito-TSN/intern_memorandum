@@ -19,5 +19,9 @@ namespace Memorandum.Models
 
     [DisplayName("時刻")]
     public int Time { get; set; }
+
+    public virtual ICollection<Account> Accounts { get; set; }
+
+    public virtual ICollection<Reaction> Reactions { get; set; }
   }
 }

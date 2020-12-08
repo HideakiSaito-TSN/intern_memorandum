@@ -18,5 +18,12 @@ namespace Memorandum.Models
 
     [DisplayName("管理者")]
     public bool Admin { get; set; }
+
+    public virtual ICollection<Goal> Goals { get; set; }
+
+    public virtual ICollection<Reaction> Reactions { get; set; }
+
+    public virtual ICollection<Message> Messages { get; set; }
+
   }
 }
