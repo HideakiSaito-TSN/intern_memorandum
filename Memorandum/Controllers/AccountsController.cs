@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Memorandum.Models;
 
 namespace Memorandum.Controllers
@@ -13,9 +14,28 @@ namespace Memorandum.Controllers
     public class AccountsController : Controller
     {
         private MemorandumDb db = new MemorandumDb();
+    // 12/9追加Login
+    [HttpGet]
+    public ActionResult Login()
+        {
+            return View();
+        }
 
-        // GET: Accounts
-        public ActionResult Index()
+    [HttpPost]
+    public ActionResult Login(Account model)
+    {
+      if (model.Name == "intern" && model.Pass == "12345")
+      {
+        return RedirectToAction("Index", "Home");
+      }
+      else
+      {
+        return this.View(model);
+      }
+    }
+
+    // GET: Accounts
+    public ActionResult Index()
         {
             return View(db.Accounts.ToList());
         }

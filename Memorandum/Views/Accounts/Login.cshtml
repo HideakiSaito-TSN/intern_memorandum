@@ -1,0 +1,24 @@
+﻿@model Memorandum.Models.Account
+
+@{
+  ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (@Html.BeginForm())
+{
+  <div class="form-item">
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+  </div>
+
+  <div class="form-item">
+    @Html.LabelFor(model => model.Pass)
+    @Html.PasswordFor(model => model.Pass)
+  </div>
+
+  <div class="button-panel">
+    <input type="submit" 　class="button" value="ログイン" />
+  </div>
+ }
