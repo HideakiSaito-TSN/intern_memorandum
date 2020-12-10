@@ -13,6 +13,9 @@ namespace Memorandum.Models
     [DisplayName("名前")]
     public string Name { get; set; }
 
+    [DisplayName("パスワード")]
+    public string Pass { get; set; }
+
     [DisplayName("ログイン状況")]
     public bool Islogin { get; set; }
 
