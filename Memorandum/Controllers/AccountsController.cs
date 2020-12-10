@@ -17,21 +17,28 @@ namespace Memorandum.Controllers
     // 12/9追加Login
     [HttpGet]
     public ActionResult Login()
-        {
-            return View();
-        }
+    {
+      return View();
+    }
 
     [HttpPost]
     public ActionResult Login(Account model)
     {
       if (model.Name == "intern" && model.Pass == "12345")
       {
+        FormsAuthentication.SetAuthCookie(model.Name, true);
         return RedirectToAction("Index", "Home");
       }
       else
       {
         return this.View(model);
       }
+    }
+
+    public ActionResult Logout()
+    {
+      FormsAuthentication.SignOut();
+      return RedirectToAction("Login", "Accounts");
     }
 
     // GET: Accounts

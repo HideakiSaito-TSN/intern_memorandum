@@ -25,6 +25,12 @@
                 <li>@Html.ActionLink("詳細", "About", "Home")</li>
                 <li>@Html.ActionLink("問い合わせ", "Contact", "Home")</li>
               </ul>
+              @if (ViewBag.Title != "Login")
+              {
+                <ul class="nav navbar-nav navbar-right">
+                  <li>@Html.ActionLink("ログアウト", "Logout", "Accounts")</li>
+                </ul>
+              }
             </div>
         </div>
     </div>
