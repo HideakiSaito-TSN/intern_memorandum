@@ -14,7 +14,7 @@ namespace Memorandum.Models
     [DisplayName("送信者ID")]
     public int SenderID { get; set; }
 
-    [DisplayName("種類")]
+    [DisplayName("タイプ")]
     public int Type { get; set; }
 
   }

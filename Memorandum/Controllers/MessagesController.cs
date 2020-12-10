@@ -14,10 +14,11 @@ namespace Memorandum.Controllers
     {
         private MemorandumDb db = new MemorandumDb();
 
-        // GET: Messages
-        public ActionResult Index()
+     // GET: Messages
+    public ActionResult Index()
         {
-            return View(db.Messages.ToList());
+
+      return View(db.Messages.ToList());
         }
 
         // GET: Messages/Details/5

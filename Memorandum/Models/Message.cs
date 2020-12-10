@@ -17,11 +17,12 @@ namespace Memorandum.Models
     [DisplayName("文章")]
     public string Sentence { get; set; }
 
-    [DisplayName("時刻")]
+    [DisplayName("日期")]
     public int Time { get; set; }
 
     public virtual ICollection<Account> Accounts { get; set; }
 
     public virtual ICollection<Reaction> Reactions { get; set; }
+  
   }
 }

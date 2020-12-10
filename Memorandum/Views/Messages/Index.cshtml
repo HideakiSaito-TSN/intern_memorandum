@@ -1,45 +1,98 @@
 ﻿@model IEnumerable<Memorandum.Models.Message>
 
 @{
-    ViewBag.Title = "Index";
+  /**/
+
+  /**/
+
+  /**/
+
+  /**/
+
+  /**/
+
+  /**/
+
+  /**/
+
+  ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
+<div style="padding: 10px; border:1px solid #333333;">
+  <h2>Message</h2>
+  <style>
+    h2 {
+      color: red
+    }
+  </style>
+  <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+  </p>
+
+  <table class="table">
+
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SenderID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sentence)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Time)
-        </th>
-        <th></th>
+      <th>
+        @Html.DisplayNameFor(model => model.SenderID)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Sentence)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Time)
+      </th>
+      <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
+    @foreach (var item in Model)
+    {
+      <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SenderID)
+          @Html.DisplayFor(modelItem => item.SenderID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sentence)
+          @Html.DisplayFor(modelItem => item.Sentence)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Time)
+          @Html.DisplayFor(modelItem => item.Time)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+          @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+          @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+          @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
-    </tr>
-}
+      </tr>
+    }
 
-</table>
+  </table>
+  <button type="button"
+          onclick="alert('Thank you!')">
+    ok
+  </button>
+  <input type="button" value="NO" onClick="location.href='http://localhost:51950/Messages'">
+
+
+</div>
+
+<div style="padding: 10px; border:1px solid #333333;">
+  <h2>
+    今後の目標
+  </h2>
+</div>
+
+<html>
+<head>
+  <title>題名</title>
+</head>
+<body>
+  <iframe width="500" height="500" src="http://localhost:51950/Goals" scrolling="auto"></iframe>
+</body>
+</html>
+
+
+<p>Date: <span id="date"></span></p>
+
+<script>
+  var dt = new Date();
+  document.getElementById("date").innerHTML = dt.toLocaleDateString();
+</script>
