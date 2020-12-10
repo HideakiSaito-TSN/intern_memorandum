@@ -14,26 +14,47 @@ namespace Memorandum.Controllers
     public class AccountsController : Controller
     {
         private MemorandumDb db = new MemorandumDb();
+
     // 12/9追加Login
     [HttpGet]
-    public ActionResult Login()
-    {
-      return View();
-    }
+        public ActionResult Login()
+        {
+          return View();
+        }
 
-    [HttpPost]
-    public ActionResult Login(Account model)
+        [HttpPost]
+     public ActionResult Login(Account model)
     {
-      if (model.Name == "intern" && model.Pass == "12345")
+      Account dbAccount = db.Accounts.Where(a=>a.Name == model.Name).FirstOrDefault();
+      if(model != null)
       {
-        FormsAuthentication.SetAuthCookie(model.Name, true);
-        return RedirectToAction("Index", "Home");
+        if(dbAccount.Pass == model.Pass)
+        {
+          FormsAuthentication.SetAuthCookie(model.Name, true);
+          return RedirectToAction("Index", "Home");
+        }
+        else
+        {
+          return this.View(model);
+        }
       }
       else
       {
         return this.View(model);
       }
     }
+        //public ActionResult Login(Account model)
+        //{
+        //  if (model.Name == "intern" && model.Pass == "12345")
+        //  {
+        //    FormsAuthentication.SetAuthCookie(model.Name, true);
+        //   return RedirectToAction("Index", "Home");
+        //  }
+        //  else
+        //  {
+        //    return this.View(model);
+        //  }
+        //}
 
     public ActionResult Logout()
     {
@@ -73,13 +94,14 @@ namespace Memorandum.Controllers
         // 詳細については、https://go.microsoft.com/fwlink/?LinkId=317598 を参照してください。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Islogin,Admin")] Account account)
-        {
+    //public ActionResult Create([Bind(Include = "Id,Name,Islogin,Admin")] Account account)
+    public ActionResult Create([Bind(Include = "Name,Pass")] Account account)
+    {
             if (ModelState.IsValid)
             {
                 db.Accounts.Add(account);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
             return View(account);
@@ -105,8 +127,8 @@ namespace Memorandum.Controllers
         // 詳細については、https://go.microsoft.com/fwlink/?LinkId=317598 を参照してください。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Islogin,Admin")] Account account)
-        {
+    public ActionResult Edit([Bind(Include = "Id,Name,Islogin,Admin")] Account account)
+    {
             if (ModelState.IsValid)
             {
                 db.Entry(account).State = EntityState.Modified;

@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202012080551016_AddAddressToAuthors.designer.cs">
       <DependentUpon>202012080551016_AddAddressToAuthors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012100734483_AddPass.cs" />
+    <Compile Include="Migrations\202012100734483_AddPass.designer.cs">
+      <DependentUpon>202012100734483_AddPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MemorandumDb.cs" />
     <Compile Include="Models\Message.cs" />
@@ -225,6 +229,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012080551016_AddAddressToAuthors.resx">
       <DependentUpon>202012080551016_AddAddressToAuthors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012100734483_AddPass.resx">
+      <DependentUpon>202012100734483_AddPass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
