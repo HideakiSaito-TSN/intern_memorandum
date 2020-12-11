@@ -23,24 +23,24 @@ namespace Memorandum.Controllers
         }
 
         [HttpPost]
-     public ActionResult Login(Account model)
+     public ActionResult Login(Account inputAccount)
     {
-      Account dbAccount = db.Accounts.Where(a=>a.Name == model.Name).FirstOrDefault();
-      if(model != null)
+      Account dbAccount = db.Accounts.Where(a=>a.Name == inputAccount.Name).FirstOrDefault();
+      if(dbAccount != null)
       {
-        if(dbAccount.Pass == model.Pass)
+        if(dbAccount.Pass == inputAccount.Pass)
         {
           //FormsAuthentication.SetAuthCookie(model.Name, true);
           return RedirectToAction("Index", "Messages");
         }
         else
         {
-          return this.View(model);
+          return this.View(inputAccount);
         }
       }
       else
       {
-        return this.View(model);
+        return this.View(inputAccount);
       }
     }
     //public ActionResult Login(Account model)
