@@ -1,13 +1,15 @@
 ﻿@model Memorandum.Models.Account
 
 @{
-  ViewBag.Title = "Login";
+        /**/
+
+        ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<h2>ログイン画面</h2>
 
 @using (@Html.BeginForm())
-{
+{ 
   <div class="form-item">
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
