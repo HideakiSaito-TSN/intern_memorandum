@@ -30,8 +30,8 @@ namespace Memorandum.Controllers
       {
         if(dbAccount.Pass == model.Pass)
         {
-          FormsAuthentication.SetAuthCookie(model.Name, true);
-          return RedirectToAction("Index", "Home");
+          //FormsAuthentication.SetAuthCookie(model.Name, true);
+          return RedirectToAction("Index", "Messages");
         }
         else
         {
@@ -43,22 +43,22 @@ namespace Memorandum.Controllers
         return this.View(model);
       }
     }
-        //public ActionResult Login(Account model)
-        //{
-        //  if (model.Name == "intern" && model.Pass == "12345")
-        //  {
-        //    FormsAuthentication.SetAuthCookie(model.Name, true);
-        //   return RedirectToAction("Index", "Home");
-        //  }
-        //  else
-        //  {
-        //    return this.View(model);
-        //  }
-        //}
+    //public ActionResult Login(Account model)
+    //{
+    //  if (model.Name == "intern" && model.Pass == "12345")
+    //  {
+    //    FormsAuthentication.SetAuthCookie(model.Name, true);
+    //   return RedirectToAction("Index", "Home");
+    //  }
+    //  else
+    //  {
+    //    return this.View(model);
+    //  }
+    //}
 
     public ActionResult Logout()
     {
-      FormsAuthentication.SignOut();
+      //FormsAuthentication.SignOut();
       return RedirectToAction("Login", "Accounts");
     }
 
