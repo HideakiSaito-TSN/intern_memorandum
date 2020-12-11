@@ -25,72 +25,73 @@
 <table border="1">
   <tr>
 
-    <td colspan="1" width="100" height="100" >A B C  </td>
+    <td colspan="1" width="100" height="100">A B C  </td>
+     
 
     <td colspan="3">
 
-     <h2>Message</h2>
+      <h2>Message</h2>
 
 
-        <style>
-          h2 {
-            color: red
-          }
-        </style>
-      
+      <style>
+        h2 {
+          color: red
+        }
+      </style>
+
       <p>
-          @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create")
       </p>
 
-        <table class="table">
+      <table class="table">
 
+        <tr>
+          <th>
+            @Html.DisplayNameFor(model => model.SenderID)
+          </th>
+          <th>
+            @Html.DisplayNameFor(model => model.Sentence)
+          </th>
+          <th>
+            @Html.DisplayNameFor(model => model.Time)
+          </th>
+          <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
           <tr>
-            <th>
-              @Html.DisplayNameFor(model => model.SenderID)
-            </th>
-            <th>
-              @Html.DisplayNameFor(model => model.Sentence)
-            </th>
-            <th>
-              @Html.DisplayNameFor(model => model.Time)
-            </th>
-            <th></th>
+            <td>
+              @Html.DisplayFor(modelItem => item.SenderID)
+            </td>
+            <td>
+              @Html.DisplayFor(modelItem => item.Sentence)
+            </td>
+            <td>
+              @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+              @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+              @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+              @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
           </tr>
+        }
 
-          @foreach (var item in Model)
-          {
-            <tr>
-              <td>
-                @Html.DisplayFor(modelItem => item.SenderID)
-              </td>
-              <td>
-                @Html.DisplayFor(modelItem => item.Sentence)
-              </td>
-              <td>
-                @Html.DisplayFor(modelItem => item.Time)
-              </td>
-              <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-              </td>
-            </tr>
-          }
+      </table>
+      <button type="button"
+              onclick="alert('Thank you!')">
+        ok
+      </button>
+      <input type="button" value="NO" onClick="location.href='http://localhost:51950/Messages'">
 
-        </table>
-        <button type="button"
-                onclick="alert('Thank you!')">
-          ok
-        </button>
-        <input type="button" value="NO" onClick="location.href='http://localhost:51950/Messages'">
-  
 
 
     </td>
   </tr>
   <tr>
     
-    <td colspan="2"><iframe width="400" height="500" src="http://localhost:51950/Goals" scrolling="auto"></iframe></td>
+    <td colspan="2" ><iframe width="400" height="500" src="http://localhost:51950/Goals" scrolling="auto"></iframe></td>
     
     <td colspan="2"><iframe width="400" height="500" src="http://localhost:51950/Goals" scrolling="auto"></iframe></td>
   </tr>
